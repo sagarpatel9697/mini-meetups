@@ -1,14 +1,32 @@
 import React from "react";
+import { Backdrop } from "./Backdrop";
+import { Modal } from "./Modal";
 
 type TodoProps = {
   title: string;
   subTitle?: string;
 };
 
-export class Todo extends React.Component<TodoProps> {
-  handleDelete() {
-    console.log(this.props.title);
-  }
+type TodoStates = {
+  isModalOpen: boolean;
+};
+
+export class Todo extends React.Component<TodoProps, TodoStates> {
+  state = { isModalOpen: false };
+
+  handleDelete = () => {
+    this.setState({
+      isModalOpen: true,
+    });
+  };
+
+  closeModalHandler = () => {
+    console.log("close handler call");
+
+    this.setState({
+      isModalOpen: false,
+    });
+  };
 
   render() {
     return (
@@ -20,6 +38,10 @@ export class Todo extends React.Component<TodoProps> {
             DELETE
           </button>
         </div>
+        {this.state.isModalOpen && <Modal />}
+        {this.state.isModalOpen && (
+          <Backdrop closeModal={this.closeModalHandler} />
+        )}
       </div>
     );
   }
