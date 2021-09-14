@@ -14,15 +14,13 @@ type TodoStates = {
 export class Todo extends React.Component<TodoProps, TodoStates> {
   state = { isModalOpen: false };
 
-  handleDelete = () => {
+  openDeleteModal = () => {
     this.setState({
       isModalOpen: true,
     });
   };
 
   closeModalHandler = () => {
-    console.log("close handler call");
-
     this.setState({
       isModalOpen: false,
     });
@@ -34,11 +32,13 @@ export class Todo extends React.Component<TodoProps, TodoStates> {
         <h2>{this.props.title}</h2>
         {this.props.subTitle && <p>{this.props.subTitle}</p>}
         <div className="actions">
-          <button className="btn" onClick={this.handleDelete}>
+          <button className="btn" onClick={this.openDeleteModal}>
             DELETE
           </button>
         </div>
-        {this.state.isModalOpen && <Modal />}
+        {this.state.isModalOpen && (
+          <Modal onCancel={this.closeModalHandler} onConfirm={() => {}} />
+        )}
         {this.state.isModalOpen && (
           <Backdrop closeModal={this.closeModalHandler} />
         )}
