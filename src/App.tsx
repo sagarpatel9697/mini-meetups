@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { Layout } from "./components/layout/Layout";
-import { Navigation } from "./components/layout/Navigation";
 import { FavoriteMeetups } from "./pages/FavoriteMeetups";
 import { Meetups } from "./pages/Meetups";
 import { NewMeetup } from "./pages/NewMeetup";
