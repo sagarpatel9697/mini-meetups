@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { Layout } from "./components/layout/Layout";
 import { Navigation } from "./components/layout/Navigation";
 import { FavoriteMeetups } from "./pages/FavoriteMeetups";
 import { Meetups } from "./pages/Meetups";
@@ -9,8 +10,7 @@ type AppProps = {};
 export class App extends React.Component<AppProps> {
   render() {
     return (
-      <div>
-        <Navigation />
+      <Layout>
         <Switch>
           <Route path="/" exact>
             <Meetups />
@@ -22,7 +22,7 @@ export class App extends React.Component<AppProps> {
             <FavoriteMeetups />
           </Route>
         </Switch>
-      </div>
+      </Layout>
     );
   }
 }
