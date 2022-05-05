@@ -1,12 +1,12 @@
 # Demo
 
-[https://sagarpatel9697.github.io/mini-meetups/#/](https://sagarpatel9697.github.io/mini-meetups/#/)
+[https://theanadimukt.github.io/mini-meetups/#/](https://theanadimukt.github.io/mini-meetups/#/)
 
 # Installation
 
 Clone repository with git command
 
-### `git clone https://github.com/sagarpatel9697/mini-meetups.git`
+### `git clone https://github.com/theanadimukt/mini-meetups.git`
 
 In the project directory, run below command to install dependencies:
 
